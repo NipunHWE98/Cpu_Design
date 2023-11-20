@@ -1,0 +1,29 @@
+module alu(input [31:0]sourceA,sourceB,
+            input[2:0]control,
+            output reg[31:0] result,output zero);
+    reg [31:0]result_Add_Sub,result_Mul,result_Div;
+	 wire[31:0]AdderSub_out,Mul_out,Div_out;
+	 wire m;
+	 
+	 and(m,control[2],control[1]);
+	 
+	 Full_Adder_Substractor add(sourceA,sourceB,m,result_Add_Sub);
+	 multiplier mul(sourceA,sourceB,Mul_out);
+	 divider div(sourceA,sourceB,Div_out);
+	 or(zero,result_Add_Sub[1],result_Add_Sub[2],result_Add_Sub[3],result_Add_Sub[4],result_Add_Sub[5],result_Add_Sub[6],result_Add_Sub[7],result_Add_Sub[8],result_Add_Sub[9],result_Add_Sub[10],result_Add_Sub[11],result_Add_Sub[12],result_Add_Sub[13],result_Add_Sub[14],result_Add_Sub[15],result_Add_Sub[16],result_Add_Sub[17],result_Add_Sub[18],result_Add_Sub[19],result_Add_Sub[20],result_Add_Sub[21],result_Add_Sub[22],result_Add_Sub[23],result_Add_Sub[24],result_Add_Sub[25],result_Add_Sub[26],result_Add_Sub[27],result_Add_Sub[28],result_Add_Sub[29],result_Add_Sub[30],result_Add_Sub[31]);
+	 
+	 always@(*)
+		case(control)
+			3'b000:result<=sourceA & sourceB;
+			3'b001:result<=sourceA | sourceB;
+			3'b010:result<=result_Add_Sub;
+			3'b011:result<=Div_out;
+			3'b100:result<=result_Add_Sub;
+			3'b110:result<=~(sourceA);
+			3'b111:result<={{30{1'b0}},result_Add_Sub[31]};
+			
+			default:result<=32'b0;
+		endcase
+	 	 
+endmodule
+

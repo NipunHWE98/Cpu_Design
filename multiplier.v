@@ -1,0 +1,362 @@
+module multiplier(input[15:0]A,
+						input [15:0]B,
+						output[31:0]out);
+						
+	wire [15:0]Aout,Aout1,Aout2,Aout3,Aout4,Aout5,Aout6,Aout7,Aout8,Aout9,Aout10,Aout11,Aout12,Aout13,Aout14, Aout15;
+	wire [15:0]cout0,cout1,cout2,cout3,cout4,cout5,cout6,cout7,cout8,cout9,cout10,cout11,cout12,cout13,cout14,cout15,cout16;
+	wire [15:0] sum0, sum1, sum2 , sum3 , sum4 , sum5 ,sum6,sum7,sum8,sum9,sum10,sum11,sum12,sum13,sum14,sum15,sum16;
+	
+	and (Aout[0],A[0],B[0]) ,(Aout[1],A[1],B[0]),(Aout[2],A[2],B[0]),(Aout[3],A[3],B[0]),(Aout[4],A[4],B[0]),(Aout[5],A[5],B[0]),(Aout[6],A[6],B[0]),(Aout[7],A[7],B[0]),(Aout[8],A[8],B[0]),(Aout[9],A[9],B[0]),(Aout[10],A[10],B[0]),(Aout[11],A[11],B[0]),(Aout[12],A[12],B[0]),(Aout[13],A[13],B[0]),(Aout[14],A[14],B[0]),(Aout[15],A[15],B[0]);
+	One_Bit_Full_Adder b00(1'b0,Aout[0],0,sum0[0],cout0[0]);
+	One_Bit_Full_Adder b01(1'b0,Aout[1],0,sum0[1],cout0[1]);
+	One_Bit_Full_Adder b02(1'b0,Aout[2],0,sum0[2],cout0[2]);
+	One_Bit_Full_Adder b03(1'b0,Aout[3],0,sum0[3],cout0[3]);
+	One_Bit_Full_Adder b04(1'b0,Aout[4],0,sum0[4],cout0[4]);
+	One_Bit_Full_Adder b05(1'b0,Aout[5],0,sum0[5],cout0[5]);
+	One_Bit_Full_Adder b06(1'b0,Aout[6],0,sum0[6],cout0[6]);
+	One_Bit_Full_Adder b07(1'b0,Aout[7],0,sum0[7],cout0[7]);
+	One_Bit_Full_Adder b08(1'b0,Aout[8],0,sum0[8],cout0[8]);
+	One_Bit_Full_Adder b09(1'b0,Aout[9],0,sum0[9],cout0[9]);
+	One_Bit_Full_Adder b10(1'b0,Aout[10],0,sum0[10],cout0[10]);
+	One_Bit_Full_Adder b11(1'b0,Aout[11],0,sum0[11],cout0[11]);
+	One_Bit_Full_Adder b12(1'b0,Aout[12],0,sum0[12],cout0[12]);
+	One_Bit_Full_Adder b13(1'b0,Aout[13],0,sum0[13],cout0[13]);
+	One_Bit_Full_Adder b14(1'b0,Aout[14],0,sum0[14],cout0[14]);
+	One_Bit_Full_Adder b15(1'b0,Aout[15],0,sum0[15],cout0[15]);
+	
+	and (Aout1[0],A[0],B[1]) ,(Aout1[1],A[1],B[1]),(Aout1[2],A[2],B[1]),(Aout1[3],A[3],B[1]),(Aout1[4],A[4],B[1]),(Aout1[5],A[5],B[1]),(Aout1[6],A[6],B[1]),(Aout1[7],A[7],B[1]),(Aout1[8],A[8],B[1]),(Aout1[9],A[9],B[1]),(Aout1[10],A[10],B[1]),(Aout1[11],A[11],B[1]),(Aout1[12],A[12],B[1]),(Aout1[13],A[13],B[1]),(Aout1[14],A[14],B[1]),(Aout1[15],A[15],B[1]);
+	One_Bit_Full_Adder b100(sum0[1],Aout1[0],cout0[0],sum1[0],cout1[0]);
+	One_Bit_Full_Adder b110(sum0[2],Aout1[1],cout0[1],sum1[1],cout1[1]);
+	One_Bit_Full_Adder b120(sum0[3],Aout1[2],cout0[2],sum1[2],cout1[2]);
+	One_Bit_Full_Adder b130(sum0[4],Aout1[3],cout0[3],sum1[3],cout1[3]);
+	One_Bit_Full_Adder b140(sum0[5],Aout1[4],cout0[4],sum1[4],cout1[4]);
+	One_Bit_Full_Adder b150(sum0[6],Aout1[5],cout0[5],sum1[5],cout1[5]);
+	One_Bit_Full_Adder b160(sum0[7],Aout1[6],cout0[6],sum1[6],cout1[6]);
+	One_Bit_Full_Adder b170(sum0[8],Aout1[7],cout0[7],sum1[7],cout1[7]);
+	One_Bit_Full_Adder b18(sum0[9],Aout1[8],cout0[8],sum1[8],cout1[8]);
+	One_Bit_Full_Adder b19(sum0[10],Aout1[9],cout0[9],sum1[9],cout1[9]);
+	One_Bit_Full_Adder b20(sum0[11],Aout1[10],cout0[10],sum1[10],cout1[10]);
+	One_Bit_Full_Adder b21(sum0[12],Aout1[11],cout0[11],sum1[11],cout1[11]);
+	One_Bit_Full_Adder b22(sum0[13],Aout1[12],cout0[12],sum1[12],cout1[12]);
+	One_Bit_Full_Adder b23(sum0[14],Aout1[13],cout0[13],sum1[13],cout1[13]);
+	One_Bit_Full_Adder b24(sum0[15],Aout1[14],cout0[14],sum1[14],cout1[14]);
+	One_Bit_Full_Adder b25(1'b0,Aout1[15],cout0[15],sum1[15],cout1[15]);
+
+	
+	
+	and (Aout2[0],A[0],B[2]) ,(Aout2[1],A[1],B[2]),(Aout2[2],A[2],B[2]),(Aout2[3],A[3],B[2]),(Aout2[4],A[4],B[2]),(Aout2[5],A[5],B[2]),(Aout2[6],A[6],B[2]),(Aout2[7],A[7],B[2]),(Aout2[8],A[8],B[2]),(Aout2[9],A[9],B[2]),(Aout2[10],A[10],B[2]),(Aout2[11],A[11],B[2]),(Aout2[12],A[12],B[2]),(Aout2[13],A[13],B[2]),(Aout2[14],A[14],B[2]),(Aout2[15],A[15],B[2]);
+	One_Bit_Full_Adder b200(sum1[1],Aout2[0],cout1[0],sum2[0],cout2[0]);
+	One_Bit_Full_Adder b210(sum1[2],Aout2[1],cout1[1],sum2[1],cout2[1]);
+	One_Bit_Full_Adder b220(sum1[3],Aout2[2],cout1[2],sum2[2],cout2[2]);
+	One_Bit_Full_Adder b230(sum1[4],Aout2[3],cout1[3],sum2[3],cout2[3]);
+	One_Bit_Full_Adder b240(sum1[5],Aout2[4],cout1[4],sum2[4],cout2[4]);
+	One_Bit_Full_Adder b250(sum1[6],Aout2[5],cout1[5],sum2[5],cout2[5]);
+	One_Bit_Full_Adder b260(sum1[7],Aout2[6],cout1[6],sum2[6],cout2[6]);
+	One_Bit_Full_Adder b27(sum1[8],Aout2[7],cout1[7],sum2[7],cout2[7]);
+	One_Bit_Full_Adder b28(sum1[9],Aout2[8],cout1[8],sum2[8],cout2[8]);
+	One_Bit_Full_Adder b29(sum1[10],Aout2[9],cout1[9],sum2[9],cout2[9]);
+	One_Bit_Full_Adder b30(sum1[11],Aout2[10],cout1[10],sum2[10],cout2[10]);
+	One_Bit_Full_Adder b31(sum1[12],Aout2[11],cout1[11],sum2[11],cout2[11]);
+	One_Bit_Full_Adder b32(sum1[13],Aout2[12],cout1[12],sum2[12],cout2[12]);
+	One_Bit_Full_Adder b33(sum1[14],Aout2[13],cout1[13],sum2[13],cout2[13]);
+	One_Bit_Full_Adder b34(sum1[15],Aout2[14],cout1[14],sum2[14],cout2[14]);
+	One_Bit_Full_Adder b35(1'b0,Aout2[15],cout1[15],sum2[15],cout2[15]);
+
+	
+	
+	and (Aout3[0],A[0],B[3]) ,(Aout3[1],A[1],B[3]),(Aout3[2],A[2],B[3]),(Aout3[3],A[3],B[3]),(Aout3[4],A[4],B[3]),(Aout3[5],A[5],B[3]),(Aout3[6],A[6],B[3]),(Aout3[7],A[7],B[3]),(Aout3[8],A[8],B[3]),(Aout3[9],A[9],B[3]),(Aout3[10],A[10],B[3]),(Aout3[11],A[11],B[3]),(Aout3[12],A[12],B[3]),(Aout3[13],A[13],B[3]),(Aout3[14],A[14],B[3]),(Aout3[15],A[15],B[3]);
+	One_Bit_Full_Adder b300(sum2[1],Aout3[0],cout2[0],sum3[0],cout3[0]);
+	One_Bit_Full_Adder b310(sum2[2],Aout3[1],cout2[1],sum3[1],cout3[1]);
+	One_Bit_Full_Adder b320(sum2[3],Aout3[2],cout2[2],sum3[2],cout3[2]);
+	One_Bit_Full_Adder b330(sum2[4],Aout3[3],cout2[3],sum3[3],cout3[3]);
+	One_Bit_Full_Adder b340(sum2[5],Aout3[4],cout2[4],sum3[4],cout3[4]);
+	One_Bit_Full_Adder b350(sum2[6],Aout3[5],cout2[5],sum3[5],cout3[5]);
+	One_Bit_Full_Adder b36(sum2[7],Aout3[6],cout2[6],sum3[6],cout3[6]);
+	One_Bit_Full_Adder b37(sum2[8],Aout3[7],cout2[7],sum3[7],cout3[7]);
+	One_Bit_Full_Adder b38(sum2[9],Aout3[8],cout2[8],sum3[8],cout3[8]);
+	One_Bit_Full_Adder b39(sum2[10],Aout3[9],cout2[9],sum3[9],cout3[9]);
+	One_Bit_Full_Adder b40(sum2[11],Aout3[10],cout2[10],sum3[10],cout3[10]);
+	One_Bit_Full_Adder b41(sum2[12],Aout3[11],cout2[11],sum3[11],cout3[11]);
+	One_Bit_Full_Adder b42(sum2[13],Aout3[12],cout2[12],sum3[12],cout3[12]);
+	One_Bit_Full_Adder b43(sum2[14],Aout3[13],cout2[13],sum3[13],cout3[13]);
+	One_Bit_Full_Adder b44(sum2[15],Aout3[14],cout2[14],sum3[14],cout3[14]);
+	One_Bit_Full_Adder b45(1'b0,Aout3[15],cout2[15],sum3[15],cout3[15]);
+
+	
+	
+	and (Aout4[0],A[0],B[4]) ,(Aout4[1],A[1],B[4]),(Aout4[2],A[2],B[4]),(Aout4[3],A[3],B[4]),(Aout4[4],A[4],B[4]),(Aout4[5],A[5],B[4]),(Aout4[6],A[6],B[4]),(Aout4[7],A[7],B[4]),(Aout4[8],A[8],B[4]),(Aout4[9],A[9],B[4]),(Aout4[10],A[10],B[4]),(Aout4[11],A[11],B[4]),(Aout4[12],A[12],B[4]),(Aout4[13],A[13],B[4]),(Aout4[14],A[14],B[4]),(Aout4[15],A[15],B[4]);
+	One_Bit_Full_Adder b400(sum3[1],Aout4[0],cout3[0],sum4[0],cout4[0]);
+	One_Bit_Full_Adder b410(sum3[2],Aout4[1],cout3[1],sum4[1],cout4[1]);
+	One_Bit_Full_Adder b420(sum3[3],Aout4[2],cout3[2],sum4[2],cout4[2]);
+	One_Bit_Full_Adder b430(sum3[4],Aout4[3],cout3[3],sum4[3],cout4[3]);
+	One_Bit_Full_Adder b440(sum3[5],Aout4[4],cout3[4],sum4[4],cout4[4]);
+	One_Bit_Full_Adder b450(sum3[6],Aout4[5],cout3[5],sum4[5],cout4[5]);
+	One_Bit_Full_Adder b460(sum3[7],Aout4[6],cout3[6],sum4[6],cout4[6]);
+	One_Bit_Full_Adder b470(sum3[8],Aout4[7],cout3[7],sum4[7],cout4[7]);
+	One_Bit_Full_Adder b480(sum3[9],Aout4[8],cout3[8],sum4[8],cout4[8]);
+	One_Bit_Full_Adder b490(sum3[10],Aout4[9],cout3[9],sum4[9],cout4[9]);
+	One_Bit_Full_Adder b500(sum3[11],Aout4[10],cout3[10],sum4[10],cout4[10]);
+	One_Bit_Full_Adder b510(sum3[12],Aout4[11],cout3[11],sum4[11],cout4[11]);
+	One_Bit_Full_Adder b520(sum3[13],Aout4[12],cout3[12],sum4[12],cout4[12]);
+	One_Bit_Full_Adder b530(sum3[14],Aout4[13],cout3[13],sum4[13],cout4[13]);
+	One_Bit_Full_Adder b540(sum3[15],Aout4[14],cout3[14],sum4[14],cout4[14]);
+	One_Bit_Full_Adder b550(1'b0,Aout4[15],cout3[15],sum4[15],cout4[15]);
+
+
+	
+	and (Aout5[0],A[0],B[5]) ,(Aout5[1],A[1],B[5]),(Aout5[2],A[2],B[5]),(Aout5[3],A[3],B[5]),(Aout5[4],A[4],B[5]),(Aout5[5],A[5],B[5]),(Aout5[6],A[6],B[5]),(Aout5[7],A[7],B[5]),(Aout5[8],A[8],B[5]),(Aout5[9],A[9],B[5]),(Aout5[10],A[10],B[5]),(Aout5[11],A[11],B[5]),(Aout5[12],A[12],B[5]),(Aout5[13],A[13],B[5]),(Aout5[14],A[14],B[5]),(Aout5[15],A[15],B[5]);
+	One_Bit_Full_Adder b50(sum4[1],Aout5[0],cout4[0],sum5[0],cout5[0]);
+	One_Bit_Full_Adder b51(sum4[2],Aout5[1],cout4[1],sum5[1],cout5[1]);
+	One_Bit_Full_Adder b52(sum4[3],Aout5[2],cout4[2],sum5[2],cout5[2]);
+	One_Bit_Full_Adder b53(sum4[4],Aout5[3],cout4[3],sum5[3],cout5[3]);
+	One_Bit_Full_Adder b54(sum4[5],Aout5[4],cout4[4],sum5[4],cout5[4]);
+	One_Bit_Full_Adder b55(sum4[6],Aout5[5],cout4[5],sum5[5],cout5[5]);
+	One_Bit_Full_Adder b56(sum4[7],Aout5[6],cout4[6],sum5[6],cout5[6]);
+	One_Bit_Full_Adder b57(sum5[8],Aout5[7],cout4[7],sum5[7],cout5[7]);
+	One_Bit_Full_Adder b58(sum5[9],Aout5[8],cout4[8],sum5[8],cout5[8]);
+	One_Bit_Full_Adder b59(sum5[10],Aout5[9],cout4[9],sum5[9],cout5[9]);
+	One_Bit_Full_Adder b60(sum5[11],Aout5[10],cout4[10],sum5[10],cout5[10]);
+	One_Bit_Full_Adder b61(sum5[12],Aout5[11],cout4[11],sum5[11],cout5[11]);
+	One_Bit_Full_Adder b62(sum5[13],Aout5[12],cout4[12],sum5[12],cout5[12]);
+	One_Bit_Full_Adder b63(sum5[14],Aout5[13],cout4[13],sum5[13],cout5[13]);
+	One_Bit_Full_Adder b64(sum5[15],Aout5[14],cout4[14],sum5[14],cout5[14]);
+	One_Bit_Full_Adder b65(1'b0,Aout5[15],cout4[15],sum5[15],cout5[15]);
+
+
+	
+	and (Aout6[0],A[0],B[6]) ,(Aout6[1],A[1],B[6]),(Aout6[2],A[2],B[6]),(Aout6[3],A[3],B[6]),(Aout6[4],A[4],B[6]),(Aout6[5],A[5],B[6]),(Aout6[6],A[6],B[6]),(Aout6[7],A[7],B[6]),(Aout6[8],A[8],B[6]),(Aout6[9],A[9],B[6]),(Aout6[10],A[10],B[6]),(Aout6[11],A[11],B[6]),(Aout6[12],A[12],B[6]),(Aout6[13],A[13],B[6]),(Aout6[14],A[14],B[6]),(Aout6[15],A[15],B[6]);
+	One_Bit_Full_Adder b600(sum5[1],Aout6[0],cout5[0],sum6[0],cout6[0]);
+	One_Bit_Full_Adder b610(sum5[2],Aout6[1],cout5[1],sum6[1],cout6[1]);
+	One_Bit_Full_Adder b620(sum5[3],Aout6[2],cout5[2],sum6[2],cout6[2]);
+	One_Bit_Full_Adder b630(sum5[4],Aout6[3],cout5[3],sum6[3],cout6[3]);
+	One_Bit_Full_Adder b640(sum5[5],Aout6[4],cout5[4],sum6[4],cout6[4]);
+	One_Bit_Full_Adder b650(sum5[6],Aout6[5],cout5[5],sum6[5],cout6[5]);
+	One_Bit_Full_Adder b660(sum5[7],Aout6[6],cout5[6],sum6[6],cout6[6]);
+	One_Bit_Full_Adder b670(sum5[8],Aout6[7],cout5[7],sum6[7],cout6[7]);
+	One_Bit_Full_Adder b680(sum5[9],Aout6[8],cout5[8],sum6[8],cout6[8]);
+	One_Bit_Full_Adder b690(sum5[10],Aout6[9],cout5[9],sum6[9],cout6[9]);
+	One_Bit_Full_Adder b700(sum5[11],Aout6[10],cout5[10],sum6[10],cout6[10]);
+	One_Bit_Full_Adder b710(sum5[12],Aout6[11],cout5[11],sum6[11],cout6[11]);
+	One_Bit_Full_Adder b720(sum5[13],Aout6[12],cout5[12],sum6[12],cout6[12]);
+	One_Bit_Full_Adder b730(sum5[14],Aout6[13],cout5[13],sum6[13],cout6[13]);
+	One_Bit_Full_Adder b740(sum5[15],Aout6[14],cout5[14],sum6[14],cout6[14]);	
+	One_Bit_Full_Adder b750(1'b0,Aout6[15],cout5[15],sum6[15],cout6[15]);
+	
+	and (Aout7[0],A[0],B[7]) ,(Aout7[1],A[1],B[7]),(Aout7[2],A[2],B[7]),(Aout7[3],A[3],B[7]),(Aout7[4],A[4],B[7]),(Aout7[5],A[5],B[7]),(Aout7[6],A[6],B[7]),(Aout7[7],A[7],B[7]),(Aout7[8],A[8],B[7]),(Aout7[9],A[9],B[7]),(Aout7[10],A[10],B[7]),(Aout7[11],A[11],B[7]),(Aout7[12],A[12],B[7]),(Aout7[13],A[13],B[7]),(Aout7[14],A[14],B[7]),(Aout7[15],A[15],B[7]);
+	One_Bit_Full_Adder b70(sum6[1],Aout7[0],cout6[0],sum7[0],cout7[0]);
+	One_Bit_Full_Adder b71(sum6[2],Aout7[1],cout6[1],sum7[1],cout7[1]);
+	One_Bit_Full_Adder b72(sum6[3],Aout7[2],cout6[2],sum7[2],cout7[2]);
+	One_Bit_Full_Adder b73(sum6[4],Aout7[3],cout6[3],sum7[3],cout7[3]);
+	One_Bit_Full_Adder b74(sum6[5],Aout7[4],cout6[4],sum7[4],cout7[4]);
+	One_Bit_Full_Adder b75(sum6[6],Aout7[5],cout6[5],sum7[5],cout7[5]);
+	One_Bit_Full_Adder b76(sum6[7],Aout7[6],cout6[6],sum7[6],cout7[6]);
+	One_Bit_Full_Adder b77(sum6[8],Aout7[7],cout6[7],sum7[7],cout7[7]);
+	One_Bit_Full_Adder b78(sum6[9],Aout7[8],cout6[8],sum7[8],cout7[8]);
+	One_Bit_Full_Adder b79(sum6[10],Aout7[9],cout6[9],sum7[9],cout7[9]);
+	One_Bit_Full_Adder b80(sum6[11],Aout7[10],cout6[10],sum7[10],cout7[10]);
+	One_Bit_Full_Adder b81(sum6[12],Aout7[11],cout6[11],sum7[11],cout7[11]);
+	One_Bit_Full_Adder b82(sum6[13],Aout7[12],cout6[12],sum7[12],cout7[12]);
+	One_Bit_Full_Adder b83(sum6[14],Aout7[13],cout6[13],sum7[13],cout7[13]);
+	One_Bit_Full_Adder b84(sum6[15],Aout7[14],cout6[14],sum7[14],cout7[14]);
+	One_Bit_Full_Adder b85(1'b0,Aout7[15],cout6[15],sum7[15],cout7[15]);
+	
+	and (Aout8[0],A[0],B[8]) ,(Aout8[1],A[1],B[8]),(Aout8[2],A[2],B[8]),(Aout8[3],A[3],B[8]),(Aout8[4],A[4],B[8]),(Aout8[5],A[5],B[8]),(Aout8[6],A[6],B[8]),(Aout8[7],A[7],B[8]),(Aout8[8],A[8],B[8]),(Aout8[9],A[9],B[8]),(Aout8[10],A[10],B[8]),(Aout8[11],A[11],B[8]),(Aout8[12],A[12],B[8]),(Aout8[13],A[13],B[8]),(Aout8[14],A[14],B[8]),(Aout8[15],A[15],B[8]);
+	One_Bit_Full_Adder b800(sum7[1],Aout8[0],cout7[0],sum8[0],cout8[0]);
+	One_Bit_Full_Adder b810(sum7[2],Aout8[1],cout7[1],sum8[1],cout8[1]);
+	One_Bit_Full_Adder b820(sum7[3],Aout8[2],cout7[2],sum8[2],cout8[2]);
+	One_Bit_Full_Adder b830(sum7[4],Aout8[3],cout7[3],sum8[3],cout8[3]);
+	One_Bit_Full_Adder b840(sum7[5],Aout8[4],cout7[4],sum8[4],cout8[4]);
+	One_Bit_Full_Adder b850(sum7[6],Aout8[5],cout7[5],sum8[5],cout8[5]);
+	One_Bit_Full_Adder b860(sum7[7],Aout8[6],cout7[6],sum8[6],cout8[6]);
+	One_Bit_Full_Adder b870(sum7[8],Aout8[7],cout7[7],sum8[7],cout8[7]);
+	One_Bit_Full_Adder b880(sum7[9],Aout8[8],cout7[8],sum8[8],cout8[8]);
+	One_Bit_Full_Adder b890(sum7[10],Aout8[9],cout7[9],sum8[9],cout8[9]);
+	One_Bit_Full_Adder b900(sum7[11],Aout8[10],cout7[10],sum8[10],cout8[10]);
+	One_Bit_Full_Adder b910(sum7[12],Aout8[11],cout7[11],sum8[11],cout8[11]);
+	One_Bit_Full_Adder b920(sum7[13],Aout8[12],cout7[12],sum8[12],cout8[12]);
+	One_Bit_Full_Adder b930(sum7[14],Aout8[13],cout7[13],sum8[13],cout8[13]);
+	One_Bit_Full_Adder b940(sum7[15],Aout8[14],cout7[14],sum8[14],cout8[14]);
+	One_Bit_Full_Adder b950(1'b0,Aout8[15],cout7[15],sum8[15],cout8[15]);
+
+	and (Aout9[0],A[0],B[9]) ,(Aout9[1],A[1],B[9]),(Aout9[2],A[2],B[9]),(Aout9[3],A[3],B[9]),(Aout9[4],A[4],B[9]),(Aout9[5],A[5],B[9]),(Aout9[6],A[6],B[9]),(Aout9[7],A[7],B[9]),(Aout9[8],A[8],B[9]),(Aout9[9],A[9],B[9]),(Aout9[10],A[10],B[9]),(Aout9[11],A[11],B[9]),(Aout9[12],A[12],B[9]),(Aout9[13],A[13],B[9]),(Aout9[14],A[14],B[9]),(Aout9[15],A[15],B[9]);
+	One_Bit_Full_Adder b90(sum8[1],Aout9[0],cout8[0],sum9[0],cout9[0]);
+	One_Bit_Full_Adder b91(sum8[2],Aout9[1],cout8[1],sum9[1],cout9[1]);
+	One_Bit_Full_Adder b92(sum8[3],Aout9[2],cout8[2],sum9[2],cout9[2]);
+	One_Bit_Full_Adder b93(sum8[4],Aout9[3],cout8[3],sum9[3],cout9[3]);
+	One_Bit_Full_Adder b94(sum8[5],Aout9[4],cout8[4],sum9[4],cout9[4]);
+	One_Bit_Full_Adder b95(sum8[6],Aout9[5],cout8[5],sum9[5],cout9[5]);
+	One_Bit_Full_Adder b96(sum8[7],Aout9[6],cout8[6],sum9[6],cout9[6]);
+	One_Bit_Full_Adder b97(sum8[8],Aout9[7],cout8[7],sum9[7],cout9[7]);
+	One_Bit_Full_Adder b98(sum8[9],Aout9[8],cout8[8],sum9[8],cout9[8]);
+	One_Bit_Full_Adder b99(sum8[10],Aout9[9],cout8[9],sum9[9],cout9[9]);
+	One_Bit_Full_Adder b10000(sum8[11],Aout9[10],cout8[10],sum9[10],cout9[10]);
+	One_Bit_Full_Adder b101(sum8[12],Aout9[11],cout8[11],sum9[11],cout9[11]);
+	One_Bit_Full_Adder b102(sum8[13],Aout9[12],cout8[12],sum9[12],cout9[12]);
+	One_Bit_Full_Adder b103(sum8[14],Aout9[13],cout8[13],sum9[13],cout9[13]);
+	One_Bit_Full_Adder b104(sum8[15],Aout9[14],cout8[14],sum9[14],cout9[14]);
+	One_Bit_Full_Adder b105(1'b0,Aout9[15],cout8[15],sum9[15],cout9[15]);
+
+	and (Aout10[0],A[0],B[10]) ,(Aout10[1],A[1],B[10]),(Aout10[2],A[2],B[10]),(Aout10[3],A[3],B[10]),(Aout10[4],A[4],B[10]),(Aout10[5],A[5],B[10]),(Aout10[6],A[6],B[10]),(Aout10[7],A[7],B[10]),(Aout10[8],A[8],B[10]),(Aout10[9],A[9],B[10]),(Aout10[10],A[10],B[10]),(Aout10[11],A[11],B[10]),(Aout10[12],A[12],B[10]),(Aout10[13],A[13],B[10]),(Aout10[14],A[14],B[10]),(Aout10[15],A[15],B[10]);
+	One_Bit_Full_Adder b1000(sum9[1],Aout10[0],cout9[0],sum10[0],cout10[0]);
+	One_Bit_Full_Adder b1010(sum9[2],Aout10[1],cout9[1],sum10[1],cout10[1]);
+	One_Bit_Full_Adder b1020(sum9[3],Aout10[2],cout9[2],sum10[2],cout10[2]);
+	One_Bit_Full_Adder b1030(sum9[4],Aout10[3],cout9[3],sum10[3],cout10[3]);
+	One_Bit_Full_Adder b1040(sum9[5],Aout10[4],cout9[4],sum10[4],cout10[4]);
+	One_Bit_Full_Adder b1050(sum9[6],Aout10[5],cout9[5],sum10[5],cout10[5]);
+	One_Bit_Full_Adder b1060(sum9[7],Aout10[6],cout9[6],sum10[6],cout10[6]);
+	One_Bit_Full_Adder b1070(sum9[8],Aout10[7],cout9[7],sum10[7],cout10[7]);
+	One_Bit_Full_Adder b1080(sum9[9],Aout10[8],cout9[8],sum10[8],cout10[8]);
+	One_Bit_Full_Adder b1090(sum9[10],Aout10[9],cout9[9],sum10[9],cout10[9]);
+	One_Bit_Full_Adder b1100(sum9[11],Aout10[10],cout9[10],sum10[10],cout10[10]);
+	One_Bit_Full_Adder b1110(sum9[12],Aout10[11],cout9[11],sum10[11],cout10[11]);
+	One_Bit_Full_Adder b1120(sum9[13],Aout10[12],cout9[12],sum10[12],cout10[12]);
+	One_Bit_Full_Adder b1130(sum9[14],Aout10[13],cout9[13],sum10[13],cout10[13]);
+	One_Bit_Full_Adder b1140(sum9[15],Aout10[14],cout9[14],sum10[14],cout10[14]);
+	One_Bit_Full_Adder b1150(1'b0,Aout10[15],cout9[15],sum10[15],cout10[15]);
+
+	and (Aout11[0],A[0],B[11]) ,(Aout11[1],A[1],B[11]),(Aout11[2],A[2],B[11]),(Aout11[3],A[3],B[11]),(Aout11[4],A[4],B[11]),(Aout11[5],A[5],B[11]),(Aout11[6],A[6],B[11]),(Aout11[7],A[7],B[11]),(Aout11[8],A[8],B[11]),(Aout11[9],A[9],B[11]),(Aout11[10],A[10],B[11]),(Aout11[11],A[11],B[11]),(Aout11[12],A[12],B[11]),(Aout11[13],A[13],B[11]),(Aout11[14],A[14],B[11]),(Aout11[15],A[15],B[11]);
+	One_Bit_Full_Adder b1100000(sum10[1],Aout11[0],cout10[0],sum11[0],cout11[0]);
+	One_Bit_Full_Adder b111(sum10[2],Aout11[1],cout10[1],sum11[1],cout11[1]);
+	One_Bit_Full_Adder b112(sum10[3],Aout11[2],cout10[2],sum11[2],cout11[2]);
+	One_Bit_Full_Adder b113(sum10[4],Aout11[3],cout10[3],sum11[3],cout11[3]);
+	One_Bit_Full_Adder b114(sum10[5],Aout11[4],cout10[4],sum11[4],cout11[4]);
+	One_Bit_Full_Adder b115(sum10[6],Aout11[5],cout10[5],sum11[5],cout11[5]);
+	One_Bit_Full_Adder b116(sum10[7],Aout11[6],cout10[6],sum11[6],cout11[6]);
+	One_Bit_Full_Adder b117(sum10[8],Aout11[7],cout10[7],sum11[7],cout11[7]);
+	One_Bit_Full_Adder b118(sum10[9],Aout11[8],cout10[8],sum11[8],cout11[8]);
+	One_Bit_Full_Adder b119(sum10[10],Aout11[9],cout10[9],sum11[9],cout11[9]);
+	One_Bit_Full_Adder b12000(sum10[11],Aout11[10],cout10[10],sum11[10],cout11[10]);
+	One_Bit_Full_Adder b121(sum10[12],Aout11[11],cout10[11],sum11[11],cout11[11]);
+	One_Bit_Full_Adder b122(sum10[13],Aout11[12],cout10[12],sum11[12],cout11[12]);
+	One_Bit_Full_Adder b123(sum10[14],Aout11[13],cout10[13],sum11[13],cout11[13]);
+	One_Bit_Full_Adder b124(sum10[15],Aout11[14],cout10[14],sum11[14],cout11[14]);
+	One_Bit_Full_Adder b125(1'b0,Aout11[15],cout10[15],sum11[15],cout11[15]);
+
+	and (Aout12[0],A[0],B[12]) ,(Aout12[1],A[1],B[12]),(Aout12[2],A[2],B[12]),(Aout12[3],A[3],B[12]),(Aout12[4],A[4],B[12]),(Aout12[5],A[5],B[12]),(Aout12[6],A[6],B[12]),(Aout12[7],A[7],B[12]),(Aout12[8],A[8],B[12]),(Aout12[9],A[9],B[12]),(Aout12[10],A[10],B[12]),(Aout12[11],A[11],B[12]),(Aout12[12],A[12],B[12]),(Aout12[13],A[13],B[12]),(Aout12[14],A[14],B[12]),(Aout12[15],A[15],B[12]);
+	One_Bit_Full_Adder b120000(sum11[1],Aout12[0],cout11[0],sum12[0],cout12[0]);
+	One_Bit_Full_Adder b12100(sum11[2],Aout12[1],cout11[1],sum12[1],cout12[1]);
+	One_Bit_Full_Adder b12200(sum11[3],Aout12[2],cout11[2],sum12[2],cout12[2]);
+	One_Bit_Full_Adder b12300(sum11[4],Aout12[3],cout11[3],sum12[3],cout12[3]);
+	One_Bit_Full_Adder b12400(sum11[5],Aout12[4],cout11[4],sum12[4],cout12[4]);
+	One_Bit_Full_Adder b12500(sum11[6],Aout12[5],cout11[5],sum12[5],cout12[5]);
+	One_Bit_Full_Adder b12600(sum11[7],Aout12[6],cout11[6],sum12[6],cout12[6]);
+	One_Bit_Full_Adder b12700(sum11[8],Aout12[7],cout11[7],sum12[7],cout12[7]);
+	One_Bit_Full_Adder b12800(sum11[9],Aout12[8],cout11[8],sum12[8],cout12[8]);
+	One_Bit_Full_Adder b12900(sum11[10],Aout12[9],cout11[9],sum12[9],cout12[9]);
+	One_Bit_Full_Adder b13000(sum11[11],Aout12[10],cout11[10],sum12[10],cout12[10]);
+	One_Bit_Full_Adder b13100(sum11[12],Aout12[11],cout11[11],sum12[11],cout12[11]);
+	One_Bit_Full_Adder b13200(sum11[13],Aout12[12],cout11[12],sum12[12],cout12[12]);
+	One_Bit_Full_Adder b13300(sum11[14],Aout12[13],cout11[13],sum12[13],cout12[13]);
+	One_Bit_Full_Adder b13400(sum11[15],Aout12[14],cout11[14],sum12[14],cout12[14]);
+	One_Bit_Full_Adder b13500(1'b0,Aout12[15],cout11[15],sum12[15],cout12[15]);
+
+	and (Aout13[0],A[0],B[13]) ,(Aout13[1],A[1],B[13]),(Aout13[2],A[2],B[13]),(Aout13[3],A[3],B[13]),(Aout13[4],A[4],B[13]),(Aout13[5],A[5],B[13]),(Aout13[6],A[6],B[13]),(Aout13[7],A[7],B[13]),(Aout13[8],A[8],B[13]),(Aout13[9],A[9],B[13]),(Aout13[10],A[10],B[13]),(Aout13[11],A[11],B[13]),(Aout13[12],A[12],B[13]),(Aout13[13],A[13],B[13]),(Aout13[14],A[14],B[13]),(Aout13[15],A[15],B[13]);
+	One_Bit_Full_Adder b1300(sum12[1],Aout13[0],cout12[0],sum13[0],cout13[0]);
+	One_Bit_Full_Adder b131(sum12[2],Aout13[1],cout12[1],sum13[1],cout13[1]);
+	One_Bit_Full_Adder b132(sum12[3],Aout13[2],cout12[2],sum13[2],cout13[2]);
+	One_Bit_Full_Adder b133(sum12[4],Aout13[3],cout12[3],sum13[3],cout13[3]);	
+	One_Bit_Full_Adder b134(sum12[5],Aout13[4],cout12[4],sum13[4],cout13[4]);
+	One_Bit_Full_Adder b135(sum12[6],Aout13[5],cout12[5],sum13[5],cout13[5]);
+	One_Bit_Full_Adder b136(sum12[7],Aout13[6],cout12[6],sum13[6],cout13[6]);
+	One_Bit_Full_Adder b137(sum12[8],Aout13[7],cout12[7],sum13[7],cout13[7]);
+	One_Bit_Full_Adder b138(sum12[9],Aout13[8],cout12[8],sum13[8],cout13[8]);
+	One_Bit_Full_Adder b139(sum12[10],Aout13[9],cout12[9],sum13[9],cout13[9]);
+	One_Bit_Full_Adder b14000(sum12[11],Aout13[10],cout12[10],sum13[10],cout13[10]);
+	One_Bit_Full_Adder b14100(sum12[12],Aout13[11],cout12[11],sum13[11],cout13[11]);
+	One_Bit_Full_Adder b14200(sum12[13],Aout13[12],cout12[12],sum13[12],cout13[12]);
+	One_Bit_Full_Adder b14300(sum12[14],Aout13[13],cout12[13],sum13[13],cout13[13]);
+	One_Bit_Full_Adder b14400(sum12[15],Aout13[14],cout12[14],sum13[14],cout13[14]);
+	One_Bit_Full_Adder b14500(1'b0,Aout13[15],cout12[15],sum13[15],cout13[15]);
+
+	and (Aout14[0],A[0],B[14]) ,(Aout14[1],A[1],B[14]),(Aout14[2],A[2],B[14]),(Aout14[3],A[3],B[14]),(Aout14[4],A[4],B[14]),(Aout14[5],A[5],B[14]),(Aout14[6],A[6],B[14]),(Aout14[7],A[7],B[14]),(Aout14[8],A[8],B[14]),(Aout14[9],A[9],B[14]),(Aout14[10],A[10],B[14]),(Aout14[11],A[11],B[14]),(Aout14[12],A[12],B[14]),(Aout14[13],A[13],B[14]),(Aout14[14],A[14],B[14]),(Aout14[15],A[15],B[14]);
+	One_Bit_Full_Adder b1400(sum13[1],Aout14[0],cout13[0],sum14[0],cout14[0]);
+	One_Bit_Full_Adder b141(sum13[2],Aout14[1],cout13[1],sum14[1],cout14[1]);
+	One_Bit_Full_Adder b142(sum13[3],Aout14[2],cout13[2],sum14[2],cout14[2]);
+	One_Bit_Full_Adder b143(sum13[4],Aout14[3],cout13[3],sum14[3],cout14[3]);
+	One_Bit_Full_Adder b144(sum13[5],Aout14[4],cout13[4],sum14[4],cout14[4]);
+	One_Bit_Full_Adder b145(sum13[6],Aout14[5],cout13[5],sum14[5],cout14[5]);
+	One_Bit_Full_Adder b146(sum13[7],Aout14[6],cout13[6],sum14[6],cout14[6]);
+	One_Bit_Full_Adder b147(sum13[8],Aout14[7],cout13[7],sum14[7],cout14[7]);
+	One_Bit_Full_Adder b148(sum13[9],Aout14[8],cout13[8],sum14[8],cout14[8]);
+	One_Bit_Full_Adder b149(sum13[10],Aout14[9],cout13[9],sum14[9],cout14[9]);
+	One_Bit_Full_Adder b150000(sum13[11],Aout14[10],cout13[10],sum14[10],cout14[10]);
+	One_Bit_Full_Adder b151(sum13[12],Aout14[11],cout13[11],sum14[11],cout14[11]);
+	One_Bit_Full_Adder b152(sum13[13],Aout14[12],cout13[12],sum14[12],cout14[12]);
+	One_Bit_Full_Adder b153(sum13[14],Aout14[13],cout13[13],sum14[13],cout14[13]);
+	One_Bit_Full_Adder b154(sum13[15],Aout14[14],cout13[14],sum14[14],cout14[14]);
+	One_Bit_Full_Adder b155(1'b0,Aout14[15],cout13[15],sum14[15],cout14[15]);
+
+	and (Aout15[0],A[0],B[15]) ,(Aout15[1],A[1],B[15]),(Aout15[2],A[2],B[15]),(Aout15[3],A[3],B[15]),(Aout15[4],A[4],B[15]),(Aout15[5],A[5],B[15]),(Aout15[6],A[6],B[15]),(Aout15[7],A[7],B[15]),(Aout15[8],A[8],B[15]),(Aout15[9],A[9],B[15]),(Aout15[10],A[10],B[15]),(Aout15[11],A[11],B[15]),(Aout15[12],A[12],B[15]),(Aout15[13],A[13],B[15]),(Aout15[14],A[14],B[15]),(Aout15[15],A[15],B[15]);
+	One_Bit_Full_Adder b150000000(sum14[1],Aout15[0],cout14[0],sum15[0],cout15[0]);
+	One_Bit_Full_Adder b151000(sum14[2],Aout15[1],cout14[1],sum15[1],cout15[1]);
+	One_Bit_Full_Adder b152000(sum14[3],Aout15[2],cout14[2],sum15[2],cout15[2]);
+	One_Bit_Full_Adder b153000(sum14[4],Aout15[3],cout14[3],sum15[3],cout15[3]);
+	One_Bit_Full_Adder b154000(sum14[5],Aout15[4],cout14[4],sum15[4],cout15[4]);
+	One_Bit_Full_Adder b155000(sum14[6],Aout15[5],cout14[5],sum15[5],cout15[5]);
+	One_Bit_Full_Adder b156000(sum14[7],Aout15[6],cout14[6],sum15[6],cout15[6]);
+	One_Bit_Full_Adder b157000(sum14[8],Aout15[7],cout14[7],sum15[7],cout15[7]);
+	One_Bit_Full_Adder b158000(sum14[9],Aout15[8],cout14[8],sum15[8],cout15[8]);
+	One_Bit_Full_Adder b159000(sum14[10],Aout15[9],cout14[9],sum15[9],cout15[9]);
+	One_Bit_Full_Adder b160000(sum14[11],Aout15[10],cout14[10],sum15[10],cout15[10]);
+	One_Bit_Full_Adder b161000(sum14[12],Aout15[11],cout14[11],sum15[11],cout15[11]);
+	One_Bit_Full_Adder b162000(sum14[13],Aout15[12],cout14[12],sum15[12],cout15[12]);
+	One_Bit_Full_Adder b163000(sum14[14],Aout15[13],cout14[13],sum15[13],cout15[13]);
+	One_Bit_Full_Adder b164000(sum14[15],Aout15[14],cout14[14],sum15[14],cout15[14]);
+	One_Bit_Full_Adder b165000(1'b0,Aout15[15],cout14[15],sum15[15],cout15[15]);
+	
+	One_Bit_Full_Adder b80000(sum15[1],cout15[0],1'b0,sum16[0],cout16[0]);
+	One_Bit_Full_Adder b81000(sum15[2],cout15[1],cout16[0],sum16[1],cout16[1]);
+	One_Bit_Full_Adder b82000(sum15[3],cout15[2],cout16[1],sum16[2],cout16[2]);
+	One_Bit_Full_Adder b83000(sum15[4],cout15[3],cout16[2],sum16[3],cout16[3]);
+	One_Bit_Full_Adder b84000(sum15[5],cout15[4],cout16[3],sum16[4],cout16[4]);
+	One_Bit_Full_Adder b85000(sum15[6],cout15[5],cout16[4],sum16[5],cout16[5]);
+	One_Bit_Full_Adder b86000(sum15[7],cout15[6],cout16[5],sum16[6],cout16[6]);
+	One_Bit_Full_Adder b87000(sum15[8],cout15[7],cout16[6],sum16[7],cout16[7]);
+	One_Bit_Full_Adder b880000(sum15[9],cout15[8],cout16[7],sum16[8],cout16[8]);
+	One_Bit_Full_Adder b890000(sum15[10],cout15[9],cout16[8],sum16[9],cout16[9]);
+	One_Bit_Full_Adder b9000000(sum15[11],cout15[10],cout16[9],sum16[10],cout16[10]);
+	One_Bit_Full_Adder b9100000(sum15[12],cout15[11],cout16[10],sum16[11],cout16[11]);
+	One_Bit_Full_Adder b9200000(sum15[13],cout15[12],cout16[11],sum16[12],cout16[12]);
+	One_Bit_Full_Adder b9300000(sum15[14],cout15[13],cout16[12],sum16[13],cout16[13]);
+	One_Bit_Full_Adder b9400000(sum15[15],cout15[14],cout16[13],sum16[14],cout16[14]);
+	One_Bit_Full_Adder b87(1'b0,cout15[15],cout16[14],sum16[15],cout16[15]);
+
+	
+	
+
+	
+assign out[0]=sum0[0];
+assign out[1]=sum1[0];
+assign out[2]=sum2[0];
+assign out[3]=sum3[0];
+assign out[4]=sum4[0];
+assign out[5]=sum5[0];
+assign out[6]=sum6[0];
+assign out[7]=sum7[0];
+assign out[8]=sum8[0];
+assign out[9]=sum9[0];
+assign out[10]=sum10[0];
+assign out[11]=sum11[0];
+assign out[12]=sum12[0];
+assign out[13]=sum13[0];
+assign out[14]=sum14[0];
+assign out[15]=sum15[0];
+assign out[16]=sum16[0];
+assign out[17]=sum16[1];
+assign out[18]=sum16[2];
+assign out[19]=sum16[3];
+assign out[20]=sum16[4];
+assign out[21]=sum16[5];
+assign out[22]=sum16[6];
+assign out[23]=sum16[7];
+assign out[24]=sum16[8];
+assign out[25]=sum16[9];
+assign out[26]=sum16[10];
+assign out[27]=sum16[11];
+assign out[28]=sum16[12];
+assign out[29]=sum16[13];
+assign out[30]=sum16[14];
+assign out[31]=sum16[15];
+							
+						
+endmodule

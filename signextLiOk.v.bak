@@ -1,0 +1,7 @@
+module signextLiOk(	input  [10:0] a,
+						input[3:0] b,
+						output  [31:0] y);
+						
+    assign y = {{13{a[18]}}, a};
+
+endmodule
